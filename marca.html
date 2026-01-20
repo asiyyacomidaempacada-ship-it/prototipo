@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ASÍ Y YA! - Nuestra Marca</title>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --yellow: #F2C94C;
+            --green-dark: #2F4F4F;
+            --sage: #C7D3C1;
+            --cream: #FAF4E8;
+            --charcoal: #333333;
+        }
+
+        * { scroll-behavior: smooth; box-sizing: border-box; }
+
+        body {
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+            background-color: var(--cream);
+            color: var(--charcoal);
+        }
+
+        h1,h2,h3 { font-family: 'Poppins', sans-serif; }
+
+        nav {
+            background-color: var(--green-dark);
+            padding: 10px 20px;
+            text-align: center;
+        }
+
+        nav a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        nav a:hover { filter: brightness(0.9); }
+
+        section { padding: 60px 20px; max-width: 1100px; margin: auto; }
+
+        .grid {
+            display: grid;
+            gap: 25px;
+            grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
+        }
+
+        .card {
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+            text-align: center;
+            opacity: 0;
+            transform: translateY(40px);
+            transition: 0.8s ease;
+        }
+
+        .card img {
+            width: 100%;
+            border-radius: 12px;
+            height: 180px;
+            object-fit: cover;
+        }
+
+        /* Animaciones scroll */
+        @keyframes fadeUp { from {opacity:0; transform:translateY(30px);} to {opacity:1; transform:translateY(0);} }
+        .visible { opacity:1 !important; transform:translateY(0) !important; }
+
+        /* Botón estilo landing (opcional para enlaces internos) */
+        .button {
+            display: inline-block;
+            background-color: var(--yellow);
+            color: #000;
+            padding: 14px 30px;
+            border-radius: 8px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: 0.2s ease-in-out;
+        }
+        .button:hover { filter: brightness(0.9); }
+
+    </style>
+</head>
+
+<body>
+
+<nav>
+  <a href="index.html">Inicio</a>
+  <a href="menu.html">Menú</a>
+  <a href="marca.html">Marca</a>
+</nav>
+
+<!-- HISTORIA -->
+<section id="historia">
+    <h2 style="text-align:center; color: var(--green-dark);">Nuestra Historia</h2>
+    <div class="card">
+        <p>
+            ASÍ Y YA! nació en 2026 con la visión de ofrecer comidas caseras, listas para calentar,
+            que combinen sabor, frescura y practicidad. Queríamos ayudar a quienes tienen semanas
+            ocupadas sin sacrificar la calidad de sus alimentos.
+        </p>
+    </div>
+</section>
+
+<!-- MISION Y VISION -->
+<section id="mision-vision">
+    <h2 style="text-align:center; color: var(--green-dark);">Misión y Visión</h2>
+    <div class="grid">
+        <div class="card">
+            <h3>Misión</h3>
+            <p>
+                Brindar productos de calidad, nutritivos y listos para consumir, que faciliten la vida
+                de nuestros clientes y promuevan hábitos saludables.
+            </p>
+        </div>
+        <div class="card">
+            <h3>Visión</h3>
+            <p>
+                Convertirnos en la marca líder en comida lista para calentar en Colombia,
+                innovando constantemente en sabores y combinaciones.
+            </p>
+        </div>
+    </div>
+</section>
+
+<!-- VALORES -->
+<section id="valores">
+    <h2 style="text-align:center; color: var(--green-dark);">Nuestros Valores</h2>
+    <div class="grid">
+        <div class="card">
+            <h3>Calidad</h3>
+            <p>Ingredientes frescos y naturales, sin conservantes ni aditivos artificiales.</p>
+        </div>
+        <div class="card">
+            <h3>Practicidad</h3>
+            <p>Comidas listas para calentar y disfrutar en minutos, ideal para semanas ocupadas.</p>
+        </div>
+        <div class="card">
+            <h3>Innovación</h3>
+            <p>Nuevas combinaciones de proteínas y guarniciones cada semana.</p>
+        </div>
+        <div class="card">
+            <h3>Transparencia</h3>
+            <p>Comunicación clara sobre ingredientes y procesos de preparación.</p>
+        </div>
+    </div>
+</section>
+
+<!-- EQUIPO -->
+<section id="equipo">
+    <h2 style="text-align:center; color: var(--green-dark);">Nuestro Equipo</h2>
+    <div class="grid">
+        <div class="card">
+            <img src="imagenes/fundador.png" alt="Fundador">
+            <h3>Juan Pérez</h3>
+            <p>Fundador y chef principal. Apasionado por la comida casera y la innovación en recetas.</p>
+        </div>
+        <div class="card">
+            <img src="imagenes/gerente.png" alt="Gerente">
+            <h3>María Gómez</h3>
+            <p>Gerente de operaciones. Se asegura de que cada pedido llegue fresco y a tiempo.</p>
+        </div>
+        <div class="card">
+            <img src="imagenes/nutricionista.png" alt="Nutricionista">
+            <h3>Laura Torres</h3>
+            <p>Nutricionista del equipo, garante de que nuestras comidas sean balanceadas y saludables.</p>
+        </div>
+    </div>
+</section>
+
+<script>
+    // Animaciones scroll
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('visible'); });
+    }, { threshold:0.2 });
+
+    document.querySelectorAll(".card").forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>

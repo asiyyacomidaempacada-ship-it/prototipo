@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ASÍ Y YA! - Menú</title>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --yellow: #F2C94C;
+            --green-dark: #2F4F4F;
+            --sage: #C7D3C1;
+            --cream: #FAF4E8;
+            --charcoal: #333333;
+        }
+
+        * { scroll-behavior: smooth; box-sizing: border-box; }
+
+        body {
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+            background-color: var(--cream);
+            color: var(--charcoal);
+        }
+
+        h1,h2,h3 { font-family: 'Poppins', sans-serif; }
+
+        nav {
+            background-color: var(--green-dark);
+            padding: 10px 20px;
+            text-align: center;
+        }
+
+        nav a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        nav a:hover { filter: brightness(0.9); }
+
+        section { padding: 60px 20px; max-width: 1100px; margin: auto; }
+
+        .grid {
+            display: grid;
+            gap: 25px;
+            grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
+        }
+
+        .card {
+            background: white;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+            text-align: center;
+            position: relative;
+            transition: 0.3s;
+        }
+
+        .card img {
+            width: 100%;
+            border-radius: 12px;
+            height: 180px;
+            object-fit: cover;
+        }
+
+        .card button {
+            margin-top: 12px;
+            background: var(--yellow);
+            border: none;
+            padding: 10px 16px;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+        }
+
+        .card button:hover { filter: brightness(0.9); }
+
+        /* Ventana emergente tipo carrito */
+        .popupBox {
+            position: fixed;
+            bottom: 80px;
+            right: 20px;
+            width: 300px;
+            background: white;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.25);
+            display: none;
+            z-index: 1000;
+        }
+
+        .popupBox h3 { margin-top:0; }
+        .popupBox span.closePopup {
+            float: right;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        /* Animaciones */
+        @keyframes fadeUp { from {opacity:0; transform:translateY(30px);} to {opacity:1; transform:translateY(0);} }
+        .card { opacity:0; transform:translateY(40px); transition:0.8s ease; }
+        .visible { opacity:1 !important; transform:translateY(0) !important; }
+    </style>
+</head>
+
+<body>
+
+<nav>
+  <a href="index.html">Inicio</a>
+  <a href="menu.html">Menú</a>
+  <a href="marca.html">Marca</a>
+</nav>
+
+<!-- PROTEINAS -->
+<section id="proteinas">
+    <h2 style="text-align:center; color: var(--green-dark);">Proteínas</h2>
+    <div class="grid">
+        <div class="card">
+            <img src="imagenes/pollo_curry.png" alt="Pollo al Curry">
+            <h3>Pollo al Curry</h3>
+            <button onclick="openPopup('popup1')">Ver descripción</button>
+            <div id="popup1" class="popupBox">
+                <span class="closePopup" onclick="closePopup('popup1')">X</span>
+                <h3>Pollo al Curry</h3>
+                <p>Delicioso pollo cocinado con especias y leche de coco. Ideal para combinar con arroz o puré de papa.</p>
+            </div>
+        </div>
+        <div class="card">
+            <img src="imagenes/solomito.png" alt="Solomito de Cerdo">
+            <h3>Solomito de Cerdo</h3>
+            <button onclick="openPopup('popup2')">Ver descripción</button>
+            <div id="popup2" class="popupBox">
+                <span class="closePopup" onclick="closePopup('popup2')">X</span>
+                <h3>Solomito de Cerdo</h3>
+                <p>Tiernos solomitos con salsa BBQ, perfectos con puré de yuca o vegetales salteados.</p>
+            </div>
+        </div>
+        <div class="card">
+            <img src="imagenes/costillas.png" alt="Costillas BBQ">
+            <h3>Costillas BBQ</h3>
+            <button onclick="openPopup('popup3')">Ver descripción</button>
+            <div id="popup3" class="popupBox">
+                <span class="closePopup" onclick="closePopup('popup3')">X</span>
+                <h3>Costillas BBQ</h3>
+                <p>Costillas jugosas con salsa barbacoa, ideales para acompañar con verduras o arroz al cilantro.</p>
+            </div>
+        </div>
+        <div class="card">
+            <img src="imagenes/posta.png" alt="Posta Cartagenera">
+            <h3>Posta Cartagenera</h3>
+            <button onclick="openPopup('popup4')">Ver descripción</button>
+            <div id="popup4" class="popupBox">
+                <span class="closePopup" onclick="closePopup('popup4')">X</span>
+                <h3>Posta Cartagenera</h3>
+                <p>Carne de res en salsa criolla, perfecta con arroz blanco o ensalada fresca.</p>
+            </div>
+        </div>
+        <div class="card">
+            <img src="imagenes/pollo_champi.png" alt="Pollo en Salsa de Champiñones">
+            <h3>Pollo Champiñones</h3>
+            <button onclick="openPopup('popup5')">Ver descripción</button>
+            <div id="popup5" class="popupBox">
+                <span class="closePopup" onclick="closePopup('popup5')">X</span>
+                <h3>Pollo en Salsa de Champiñones</h3>
+                <p>Pollo tierno en salsa cremosa de champiñones, ideal con puré de papa o arroz blanco.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- GUARNICIONES -->
+<section id="guarniciones">
+    <h2 style="text-align:center; color: var(--green-dark);">Guarniciones</h2>
+    <div class="grid">
+        <!-- Aquí repetir para 10 guarniciones con la misma estructura -->
+        <div class="card">
+            <img src="imagenes/arroz_blanco.png" alt="Arroz Blanco">
+            <h3>Arroz Blanco</h3>
+            <button onclick="openPopup('popup6')">Ver descripción</button>
+            <div id="popup6" class="popupBox">
+                <span class="closePopup" onclick="closePopup('popup6')">X</span>
+                <h3>Arroz Blanco</h3>
+                <p>Arroz cocido al dente, ideal para acompañar cualquier proteína.</p>
+            </div>
+        </div>
+        <!-- Repite 9 más cambiando IDs, imagenes y descripciones -->
+    </div>
+</section>
+
+<!-- RECETAS -->
+<section id="recetas">
+    <h2 style="text-align:center; color: var(--green-dark);">Recetas</h2>
+    <div class="grid">
+        <div class="card">
+            <img src="imagenes/receta1.png" alt="Ensalada Proteica">
+            <h3>Ensalada Proteica</h3>
+            <button onclick="openPopup('popup16')">Ver descripción</button>
+            <div id="popup16" class="popupBox">
+                <span class="closePopup" onclick="closePopup('popup16')">X</span>
+                <h3>Ensalada Proteica</h3>
+                <p>Combinación de pollo, verduras frescas y arroz integral, lista para calentar y disfrutar.</p>
+            </div>
+        </div>
+        <!-- Repetir para 2–4 recetas más -->
+    </div>
+</section>
+
+<script>
+    function openPopup(id){ document.getElementById(id).style.display='block'; }
+    function closePopup(id){ document.getElementById(id).style.display='none'; }
+
+    // Animaciones scroll
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('visible'); });
+    }, { threshold:0.2 });
+
+    document.querySelectorAll(".card").forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>
